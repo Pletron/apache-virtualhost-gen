@@ -9,9 +9,9 @@ IFS='.' read -r id sitename <<< "$fullurl"
 echo $'<VirtualHost *:80>
     ServerName '$sitename'
     ServerAlias '$subdomain'.'$sitename'
-    DocumentRoot '$hostDir'/'$fullurl'
-    CustomLog '$hostDir'/'$fullurl'/access.log combined
-    ErrorLog '$hostDir'/'$fullurl'/error.log
+    DocumentRoot '$hostDir'/site
+    CustomLog '$hostDir'/site/access.log combined
+    ErrorLog '$hostDir'/site/error.log
     <Directory "'$hostDir'/site">
       Options FollowSymLinks Includes MultiViews
       AllowOverride All
