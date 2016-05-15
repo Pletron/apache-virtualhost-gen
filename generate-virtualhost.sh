@@ -2,7 +2,7 @@
 
 hostDir=/var/www
 
-fullurl="$(head -n 1 Dockerfile | awk '{print $2}')"
+fullurl="$(head -n 1 /var/www/site/Dockerfile | awk '{print $2}')"
 subdomain=$(echo $fullurl | cut -f 1 -d ".")
 IFS='.' read -r id sitename <<< "$fullurl"
 
