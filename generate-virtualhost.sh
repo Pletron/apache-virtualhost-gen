@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ ! -f /var/www/site/docker-compose.yml ]; then
+    echo "[Docker supervisor:virtualhost] Failed to open composefile"
     exit
 fi
 
@@ -25,3 +26,4 @@ echo $'<VirtualHost *:80>
     </Directory>
 </VirtualHost>' > /etc/apache2/sites-available/$fullurl
 ln -s /etc/apache2/sites-available/$fullurl /etc/apache2/sites-enabled/$fullurl
+echo "[Docker supervisor:virtualhost] Finished configuring"
