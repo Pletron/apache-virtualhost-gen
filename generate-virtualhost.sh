@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f /var/www/site/docker-compose.yml ]; then
+if [ ! -f /var/www/site/docker-compose.yaml ]; then
     echo "[Docker supervisor:virtualhost] Failed to open composefile"
     exit
 fi
