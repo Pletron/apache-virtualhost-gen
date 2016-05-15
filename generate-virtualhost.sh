@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -f /var/www/site/docker-compose.yml ]; then
+    exit
+fi
+
 hostDir=/var/www
 
 fullurl="$(head -n 1 /var/www/site/docker-compose.yml | awk '{print $2}')"
