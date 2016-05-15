@@ -1,3 +1,3 @@
 #!/bin/bash
 
-chmod +x generate-virtualhost.sh && ./generate-virtualhost.sh
+chmod +x /lampstack-docker-config/generate-virtualhost.sh && /lampstack-docker-config/generate-virtualhost.sh
