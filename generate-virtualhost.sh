@@ -1,13 +1,14 @@
 #!/bin/bash
 
-if [ ! -f /var/www/site/docker-compose.yaml ]; then
+DOCKER_COMPOSE=/var/www/site/docker-compose.yaml
+if [ ! -f $DOCKER_COMPOSE ]; then
     echo "[Docker supervisor:virtualhost] Failed to open composefile"
     exit
 fi
 
 hostDir=/var/www
 
-fullurl="$(head -n 1 /var/www/site/docker-compose.yml | awk '{print $2}')"
+fullurl="$(head -n 1 $DOCKER_COMPOSE | awk '{print $2}')"
 subdomain=$(echo $fullurl | cut -f 1 -d ".")
 IFS='.' read -r id sitename <<< "$fullurl"
 
