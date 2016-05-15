@@ -20,6 +20,4 @@ echo $'<VirtualHost *:80>
       Require all granted
     </Directory>
 </VirtualHost>' > /etc/apache2/sites-available/$fullurl
-
 ln -s /etc/apache2/sites-available/$fullurl /etc/apache2/sites-enabled/$fullurl
-apache2ctl -k graceful
